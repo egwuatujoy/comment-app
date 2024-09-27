@@ -1,9 +1,11 @@
+import "./index.css";
+
+import ContainerSection from "./components/ContainerSection";
+
 const App = () => {
   return (
     <div>
-      <h1 className="text-2xl text-yellow-400">
-        yhellooooooooooooooooooooooooooo
-      </h1>
+      <ContainerSection />
     </div>
   );
 };
