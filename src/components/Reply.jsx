@@ -1,6 +1,15 @@
 import { useState } from "react";
 
-const Reply = ({ reply }) => {
+const Reply = ({
+  reply,
+  name,
+  onClick,
+  nameImg,
+  edit,
+  editImg,
+  gap,
+  color,
+}) => {
   let [count, setCount] = useState(0);
 
   function minusBtn() {
@@ -34,9 +43,33 @@ const Reply = ({ reply }) => {
               </p>
             </div>
 
-            <div className="flex justify-center items-center gap-2 max-md:absolute top-40  right-0 ">
-              <img src="/images/icon-reply.svg" alt="" />
-              <h2 className="text-moderateBlue font-bold text-sm ">Reply</h2>
+            <div
+              className={`flex justify-center items-center gap-${gap}  max-md:absolute top-40  right-0 `}
+            >
+
+
+              <div
+                className="cursor-pointer flex justify-center items-center gap-1"
+                onClick={onClick}
+              >
+                <img src={nameImg} alt="" />
+                <h2
+                  className={`text-moderateBlue text-${color}   font-bold text-sm `}
+                >
+                  {name}
+                </h2>
+              </div>
+
+              
+
+              <div className="flex justify-center items-center gap-1 cursor-pointer    ">
+                <img src={editImg} alt="" />
+                <h2 className="text-moderateBlue font-bold text-sm ">{edit}</h2>
+              </div>
+
+
+
+
             </div>
           </div>
 
