@@ -57,7 +57,7 @@ const Replies = ({ replies }) => {
                   nameImg={"/images/icon-delete.svg"}
                   edit={"Edit"}
                   editImg={"/images/icon-edit.svg"}
-                  gap={3}
+                  gap={4}
                   color={"softRed"}
                   onClick={handleDel}
                 />
