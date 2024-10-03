@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-const CommentSection = ({ comment }) => {
-
-
+const Reply = ({ reply }) => {
   let [count, setCount] = useState(0);
 
   function minusBtn() {
@@ -29,10 +27,10 @@ const CommentSection = ({ comment }) => {
         <div>
           <div className="flex justify-between mb-3 relative ">
             <div className="flex justify-center items-center gap-4">
-              <img src={`${comment.user.image.png}`} alt="" className="w-10" />
-              <p className="text-darkBlue font-bold">{comment.user.username}</p>
+              <img src={`${reply.user.image.png}`} alt="" className="w-10" />
+              <p className="text-darkBlue font-bold">{reply.user.username}</p>
               <p className="text-grayishBlue font-medium text-sm">
-                {comment.createdAt}
+                {reply.createdAt}
               </p>
             </div>
 
@@ -43,7 +41,7 @@ const CommentSection = ({ comment }) => {
           </div>
 
           <p className="text-grayishBlue font-medium  text-sm">
-            {comment.content}
+            {reply.content}
           </p>
         </div>
       </div>
@@ -51,4 +49,4 @@ const CommentSection = ({ comment }) => {
   );
 };
 
-export default CommentSection;
+export default Reply;

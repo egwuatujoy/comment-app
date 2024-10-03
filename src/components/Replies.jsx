@@ -1,10 +1,14 @@
-const Replies = () => {
+import Reply from "./Reply";
+
+const Replies = ({ replies }) => {
   return (
-    <section className="flex justify-end items-end">
-      <div className=" gap-5 container w-9/12 p-4 bg-whites rounded-md mb-7">
-        <h1>hi</h1>
+    <div className="flex flex-col justify-end items-end">
+      <div className="w-9/12 max-md:w-full">
+        {replies.map((reply) => (
+          <Reply key={reply.id} reply={reply} />
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

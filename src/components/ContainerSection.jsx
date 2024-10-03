@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import CommentSection from "./CommentSection";
 import Replies from "./Replies";
-
 const ContainerSection = () => {
   const [comments, setComments] = useState([]);
 
@@ -22,13 +21,13 @@ const ContainerSection = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center my-40 mx-40 max-md:my-20 max-md:mx-5">
-      <div>
-        {comments.map((comment) => (
-          <CommentSection key={comment.id} comment={comment} />
-        ))}
-        <Replies/>
-      </div>
+    <div>
+      {comments.map((comment) => (
+        <div key={comment.id}>
+          <CommentSection comment={comment} />
+          {comment.replies.length > 0 && <Replies replies={comment.replies} />}
+        </div>
+      ))}
     </div>
   );
 };
